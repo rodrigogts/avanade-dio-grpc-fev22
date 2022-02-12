@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.avanade.grpc;
+
+option java_multiple_files = true;
+option java_package = "com.avanade.grpc.product.lib";
+option java_outer_classname = "ProductProto";
+
+service ProductService {
+
+  rpc ProductsByDescription(ProductRequest) returns (ProductResponse) {
+  }
+
+}
+
+message ProductRequest {
+  string id = 1;
+  string description = 2;
+}
+
+message ProductResponse {
+  string id = 1;
+  string description = 2;
+}
